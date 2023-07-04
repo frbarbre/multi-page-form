@@ -14,6 +14,7 @@ export default function NavigationButtons() {
   const [prevPath, setPrevPath] = useState("");
 
   const name = useStore((store) => store.name);
+  const setNameErr = useStore((store) => store.setNameErr);
 
   useEffect(() => {
     if (currentPage === "/") {
@@ -35,6 +36,7 @@ export default function NavigationButtons() {
     if (currentPage === "/") {
       if (name === "") {
         console.log("name cant't be empty");
+        setNameErr(true)
         return;
       }
     }
