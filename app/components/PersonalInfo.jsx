@@ -68,9 +68,19 @@ export default function PersonalInfo() {
 
             <div className="w-full flex flex-col gap-6 mt-6">
               <div className="flex flex-col gap-1">
-                <label className="text-marine-blue text-[14px]" htmlFor="name">
-                  Name
-                </label>
+                <div className="flex justify-between">
+                  <label
+                    className="text-marine-blue text-[14px]"
+                    htmlFor="name"
+                  >
+                    Name
+                  </label>
+                  {nameErr && (
+                    <p className="text-[14px] text-strawberry-red">
+                      Name can't be empty
+                    </p>
+                  )}
+                </div>
                 <input
                   type="text"
                   name="name"
