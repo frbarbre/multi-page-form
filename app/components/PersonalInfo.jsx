@@ -3,12 +3,21 @@
 import { useStore } from "../store";
 import { useEffect, useState } from "react";
 import { NavigationButtons } from ".";
-import shallow from "zustand/shallow";
+import { shallow } from "zustand/shallow";
 
 export default function PersonalInfo() {
-  const [nameErr, setNameErr] = useState(false);
-  const [emailErr, setEmailErr] = useState(false);
-  const [phoneErr, setPhoneErr] = useState(false);
+  const [nameErr, setNameErr] = useStore(
+    (state) => [state.nameErr, state.setNameErr],
+    shallow
+  );
+  const [emailErr, setEmailErr] = useStore(
+    (state) => [state.emailErr, state.setEmailErr],
+    shallow
+  );
+  const [phoneErr, setPhoneErr] = useStore(
+    (state) => [state.phoneErr, state.setPhoneErr],
+    shallow
+  );
 
   const [namePressed, setNamePressed] = useState(false);
 
