@@ -1,7 +1,6 @@
 "use client";
 
 import { useStore } from "../store";
-import shallow from "zustand/shallow";
 import { useEffect, useState } from "react";
 import { NavigationButtons } from ".";
 
