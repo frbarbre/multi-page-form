@@ -3,6 +3,7 @@
 import { useStore } from "../store";
 import { useEffect, useState } from "react";
 import { NavigationButtons } from ".";
+import shallow from "zustand/shallow";
 
 export default function PersonalInfo() {
   const [nameErr, setNameErr] = useState(false);
