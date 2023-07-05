@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${ubuntu.className} w-screen md:min-h-screen flex md:justify-center md:flex-col`}
+        className={`${ubuntu.className} min-h-screen flex md:justify-center md:flex-col relative`}
       >
         <div className="flex flex-col md:flex-row md:justify-between max-w-[935px] md:w-[90%] mx-auto rounded-xl md:shadow-2xl w-full">
           <aside className="md:p-4 md:pr-0">

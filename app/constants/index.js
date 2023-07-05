@@ -24,3 +24,25 @@ export const navLinks = [
     pathTwo: "/submitted",
   },
 ];
+
+export const planCards = [
+  {
+    title: "Arcade",
+    image: "/icon-arcade.svg",
+    pricing: 9,
+    id: "arcade",
+  },
+  {
+    title: "Advanced",
+    image: "/icon-advanced.svg",
+    pricing: 12,
+    id: "advanced",
+  },
+  {
+    title: "Pro",
+    image: "/icon-pro.svg",
+    pricing: 15,
+    id: "pro",
+  },
+];
+

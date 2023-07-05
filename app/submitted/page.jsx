@@ -1,7 +1,7 @@
+import { SubmittedPage } from "../components";
+
 export default function Submitted() {
   return (
-    <div>
-      <h1>Submitted</h1>
-    </div>
+    <SubmittedPage />
   );
 }

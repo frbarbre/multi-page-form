@@ -7,7 +7,7 @@ export default function NavLinks({ number, pathOne, pathTwo, title }) {
   const currentPage = usePathname();
 
   return (
-    <Link href={pathOne} className="flex gap-4 w-max items-center">
+    <div className="flex gap-4 w-max items-center">
       <div
         className={`${
           currentPage === pathOne || currentPage === pathTwo
@@ -21,6 +21,6 @@ export default function NavLinks({ number, pathOne, pathTwo, title }) {
         <h4 className="font-light text-[13px]">Step {number}</h4>
         <h3 className="font-bold text-[15px]">{title}</h3>
       </div>
-    </Link>
+    </div>
   );
 }

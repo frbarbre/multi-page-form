@@ -16,6 +16,12 @@ export default function NavigationButtons() {
   const name = useStore((store) => store.name);
   const setNameErr = useStore((store) => store.setNameErr);
 
+  const email = useStore((store) => store.email);
+  const setEmailErr = useStore((store) => store.setEmailErr);
+
+  const phone = useStore((store) => store.phoneNumber);
+  const setPhoneErr = useStore((store) => store.setPhoneErr);
+
   useEffect(() => {
     if (currentPage === "/") {
       setNextPath("/plan");
@@ -34,13 +40,38 @@ export default function NavigationButtons() {
 
   function handleNextClick() {
     if (currentPage === "/") {
-      if (name === "") {
+      let check = 0;
+      if (name !== "") {
+        setNameErr(false);
+        check += 1;
+      } else {
         console.log("name cant't be empty");
-        setNameErr(true)
-        return;
+        setNameErr(true);
+      }
+
+      if (email.includes("@") && email.includes(".") && !email.includes(" ")) {
+        setEmailErr(false);
+        check += 1;
+      } else {
+        console.log("email is invalid");
+        setEmailErr(true);
+      }
+
+      if (phone !== "") {
+        setPhoneErr(false);
+        check += 1;
+      } else {
+        console.log("phone number can't be empty");
+        setPhoneErr(true);
+      }
+
+      if (check === 3) {
+        router.push(nextPath);
       }
     }
-    router.push(nextPath);
+    else {
+        router.push(nextPath)
+    }
   }
 
   function handlePrevClick() {
@@ -50,7 +81,7 @@ export default function NavigationButtons() {
   return (
     <div className="md:p-8 md:pt-0">
       <div
-        className={`flex justify-between w-full md:max-w-[400px] mx-auto ${
+        className={`flex justify-between w-full md:max-w-[452px] mx-auto ${
           currentPage === "/" ? "flex-col" : ""
         }`}
       >
@@ -59,7 +90,7 @@ export default function NavigationButtons() {
         )}
         {currentPage !== "/submitted" && (
           <button
-            className={`self-end text-white rounded-lg p-3 ${
+            className={`self-end text-white rounded-lg py-3 px-5 ${
               currentPage === "/summary" ? "bg-purplish-blue" : "bg-marine-blue"
             }`}
             type="button"
