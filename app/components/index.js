@@ -6,7 +6,7 @@ import NameInput from "./NameInput";
 import EmailInput from "./EmailInput";
 import PhoneInput from "./PhoneInput";
 import PlanSelect from "./PlanSelect";
-import PlanCard from "./Plancard";
+import PlanCard from "./PlanCard";
 import BillingSwitch from "./BillingSwitch";
 import AddOnsSelect from "./AddOnsSelect";
 import Checkboxes from "./Checkboxes";
