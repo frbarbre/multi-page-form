@@ -47,7 +47,7 @@ export default function PhoneInput() {
         value={phoneNumber.replace(/\s/g, "").replace(/(\d{2})/g, "$1 ").trim()}
         onChange={(e) => setPhoneNumber(e.target.value)}
         onKeyDown={() => setPhonePressed(true)}
-        placeholder="e.g. +45 8888 8888"
+        placeholder="e.g. +45 88 88 88 88"
         maxLength={15}
         className={`w-full outline-none ring-[1px] ring-cool-gray p-3 rounded-lg focus:ring-marine-blue ${
           phoneErr ? "ring-strawberry-red focus:ring-strawberry-red" : ""
