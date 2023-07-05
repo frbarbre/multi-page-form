@@ -17,7 +17,7 @@ export default function PhoneInput() {
     shallow
   );
 
-  var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+  var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{2})[-. ]?([0-9]{2})[-. ]?([0-9]{2})[-. ]?([0-9]{2})$/;
 
   useEffect(() => {
     if (phonePressed) {
@@ -44,11 +44,11 @@ export default function PhoneInput() {
       <input
         type="text"
         name="phone"
-        value={phoneNumber}
+        value={phoneNumber.replace(/\s/g, "").replace(/(\d{2})/g, "$1 ").trim()}
         onChange={(e) => setPhoneNumber(e.target.value)}
         onKeyDown={() => setPhonePressed(true)}
         placeholder="e.g. +45 8888 8888"
-        maxLength={13}
+        maxLength={15}
         className={`w-full outline-none ring-[1px] ring-cool-gray p-3 rounded-lg focus:ring-marine-blue ${
           phoneErr ? "ring-strawberry-red focus:ring-strawberry-red" : ""
         }`}
